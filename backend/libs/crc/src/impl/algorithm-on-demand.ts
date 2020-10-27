@@ -1,4 +1,4 @@
-import CrcAlgorithm, { Byte, CRC } from "../interface/algorithm";
+import CrcAlgorithm, { Byte, CRC } from "@/interface/algorithm";
 
 const DIV = 0x11021;
 
