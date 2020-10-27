@@ -1,6 +1,6 @@
 import sqlite3 from "sqlite3";
 import { open } from "sqlite";
-import CrcAlgorithmOnDemand from "./src/impl/altorithm-on-demand";
+import CrcAlgorithmOnDemand from "./src/impl/algorithm-on-demand";
 
 type Chunk = number[];
 
@@ -50,7 +50,6 @@ async function* makeLookupTableOnMemoryChunking(chunkLength: number) {
   const chunkNumber = (65536 * 256) / chunkLength;
   for (let chunkIndex = 0; chunkIndex < chunkNumber; ++chunkIndex) {
     let chunk: Chunk = [];
-    console.log(`chunk ${chunkIndex + 1}`);
     for await (const tuple of take(lookupTable, chunkLength)) {
       chunk = chunk.concat(tuple);
     }
