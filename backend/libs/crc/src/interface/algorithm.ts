@@ -4,8 +4,8 @@ export type CRC = number;
 export type Byte = number;
 
 interface CrcAlgorithm {
-  next(crc: CRC, data: Byte): CRC;
-  prev(crc: CRC, data: Byte): CRC;
+  next(crc: CRC, data: Byte): Promise<CRC>;
+  prev(crc: CRC, data: Byte): Promise<CRC>;
 }
 
 export default CrcAlgorithm;
